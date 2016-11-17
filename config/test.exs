@@ -11,9 +11,9 @@ config :logger, level: :warn
 
 # Configure your database
 config :payment, Payment.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  adapter: Ecto.Adapters.MySQL,
+  username: "root",
+  password: "1234",
   database: "payment_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

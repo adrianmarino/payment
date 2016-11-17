@@ -11,7 +11,8 @@ defmodule Payment.Mixfile do
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+      preferred_cli_env: [espec: :test],
     ]
   end
 
@@ -21,7 +22,7 @@ defmodule Payment.Mixfile do
   def application do
     [
       mod: {Payment, []},
-      applications: [:phoenix, :phoenix_pubsub, :cowboy, :logger, :gettext, :phoenix_ecto, :postgrex]
+      applications: [:phoenix, :phoenix_pubsub, :cowboy, :logger, :gettext, :phoenix_ecto, :mariaex]
     ]
   end
 
@@ -40,7 +41,8 @@ defmodule Payment.Mixfile do
       {:postgrex, ">= 0.0.0"},
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
-      {:espec_phoenix, "~> 0.6.3", only: :test}
+      {:espec_phoenix, "~> 0.6.3", only: :test},
+      {:mariaex, "~> 0.7.7"}
     ]
   end
 

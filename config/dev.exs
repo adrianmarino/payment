@@ -23,9 +23,9 @@ config :phoenix, :stacktrace_depth, 20
 
 # Configure your database
 config :payment, Payment.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  adapter: Ecto.Adapters.MySQL,
+  username: "root",
+  password: "1234",
   database: "payment_dev",
   hostname: "localhost",
   pool_size: 10
