@@ -7,9 +7,10 @@ defmodule RuleEngineSpec do
     context "when fire two custom rules and match one" do
       let ctx: 2
       let rules: [
-        %CommercialPolicy{ name: "Greater than one", when: 'ctx > 1', then: 1 },
-        %CommercialPolicy{ name: "equal to one", when: 'ctx == 1', then: 2 }
+        %CommercialPolicy{ name: "Greater than one", when: "ctx > 1", then: "1" },
+        %CommercialPolicy{ name: "Equal to one", when: "ctx == 1", then: "2" }
       ]
+
       let results: described_module.fire_all rules, ctx: ctx
 
       it "returns one result", do: expect results |> to(have_length 1)

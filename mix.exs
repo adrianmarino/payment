@@ -20,14 +20,14 @@ defmodule Payment.Mixfile do
   #
   # Type `mix help compile.app` for more information.
   def application do
-    [
-      mod: {Payment, []},
-      applications: [:phoenix, :phoenix_pubsub, :cowboy, :logger, :gettext, :phoenix_ecto, :mariaex]
-    ]
+    [mod: {Payment, []}, applications: applications(Mix.env)]
   end
+  defp applications(:test), do: applications(:all) ++ [:ex_machina]
+  defp applications(_all), do: [
+    :phoenix, :phoenix_pubsub, :cowboy, :logger, :gettext, :phoenix_ecto, :mariaex]
 
   # Specifies which paths to compile per environment.
-  defp elixirc_paths(:test), do: ["lib", "web", "test/support"]
+  defp elixirc_paths(:test), do: ["lib", "web", "spec/factories"]
   defp elixirc_paths(_),     do: ["lib", "web"]
 
   # Specifies your project dependencies.
@@ -41,8 +41,9 @@ defmodule Payment.Mixfile do
       {:postgrex, ">= 0.0.0"},
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
+      {:mariaex, "~> 0.7.7"},
       {:espec_phoenix, "~> 0.6.3", only: :test},
-      {:mariaex, "~> 0.7.7"}
+      {:ex_machina, "~> 1.0", only: :test}
     ]
   end
 

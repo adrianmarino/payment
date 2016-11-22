@@ -6,6 +6,7 @@
   "ecto": {:hex, :ecto, "2.0.5", "7f4c79ac41ffba1a4c032b69d7045489f0069c256de606523c65d9f8188e502d", [:mix], [{:db_connection, "~> 1.0-rc.4", [hex: :db_connection, optional: true]}, {:decimal, "~> 1.1.2 or ~> 1.2", [hex: :decimal, optional: false]}, {:mariaex, "~> 0.7.7", [hex: :mariaex, optional: true]}, {:poison, "~> 1.5 or ~> 2.0", [hex: :poison, optional: true]}, {:poolboy, "~> 1.5", [hex: :poolboy, optional: false]}, {:postgrex, "~> 0.12.0", [hex: :postgrex, optional: true]}, {:sbroker, "~> 1.0-beta", [hex: :sbroker, optional: true]}]},
   "espec": {:hex, :espec, "1.1.2", "d1cf60ee8f6fb8b0f1593097958762f870949238b0aa15788201728cb6e672dd", [:mix], [{:meck, "~> 0.8.4", [hex: :meck, optional: false]}]},
   "espec_phoenix": {:hex, :espec_phoenix, "0.6.3", "9cd9282c67d1ad7894dc4db030fb86c941c6930e4127ce60f093d7d43f66f636", [:mix], [{:espec, ">= 1.1.2", [hex: :espec, optional: false]}]},
+  "ex_machina": {:hex, :ex_machina, "1.0.2", "1cc49e1a09e3f7ab2ecb630c17f14c2872dc4ec145d6d05a9c3621936a63e34f", [:mix], [{:ecto, "~> 2.0", [hex: :ecto, optional: true]}]},
   "gettext": {:hex, :gettext, "0.12.1", "c0624f52763469ef7a3674919ae28b8286d88195b90fa1516180f31bbbd26d14", [:mix], []},
   "mariaex": {:hex, :mariaex, "0.7.7", "620a636ec2276c3fa031ac528039fc9d2bf7992e050e37a56b3c796511e94d6d", [:mix], [{:db_connection, "~> 1.0.0-rc", [hex: :db_connection, optional: false]}, {:decimal, "~> 1.0", [hex: :decimal, optional: false]}]},
   "meck": {:hex, :meck, "0.8.4", "59ca1cd971372aa223138efcf9b29475bde299e1953046a0c727184790ab1520", [:make, :rebar], []},

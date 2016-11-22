@@ -9,3 +9,8 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+import Payment.Repo, only: [insert!: 1]
+alias Payment.CommercialPolicy, as: Cp
+
+insert! %Cp{ name: "Greater than one", when: "ctx > 1", then: "1" }
+insert! %Cp{ name: "Equal to one", when: "ctx == 1", then: "2" }
