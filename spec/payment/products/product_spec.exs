@@ -1,6 +1,6 @@
 defmodule ProductSpec do
   use ESpec
-  import Payment.Factory
+  import Payment.ProductFactory
 
   context "when calculates price of a flight with two passengers" do
     subject build(:flight_with_two_passengers)
