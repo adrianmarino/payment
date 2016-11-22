@@ -1,7 +1,6 @@
 defmodule Payment.Factory do
   use ExMachina
-  alias Payment.Methods.CreditCard
-  alias Payment.Bank
+  alias Payment.{Methods.CreditCard, Bank}
 
   def visa_santander_credit_card_factory do
     %CreditCard{
