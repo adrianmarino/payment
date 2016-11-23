@@ -1,12 +1,23 @@
 defmodule Payment.ProductFactory do
   use ExMachina
+  alias Payment.PassengerFactory
 
-  def flight_with_two_passengers_factory,
-    do: %Flight{passengers: [build(:passenger), build(:passenger, full_name: 'Jango Fett')]}
+  def flight_with_two_passengers_factory do
+    %Flight{
+      id: sequence("product_id"),
+      passengers: [
+        PassengerFactory.build(:obi_wan_passenger),
+        PassengerFactory.build(:jango_fett_passenger)
+      ]
+    }
+  end
 
-  def passenger_factory,
-    do: %Passenger{full_name: 'Obi-Wan Kenobi', price: build(:flight_fare)}
-
-  def flight_fare_factory, do: %FlightPrice{fare: 15000, fee: 3000, markup: 500, tax: 1500}
-
+  def health_insurance_factory(flight) do
+    HealthInsurance.create(
+      sequence("product_id"),
+      'assist-card',
+      1000,
+      flight
+    )
+  end
 end

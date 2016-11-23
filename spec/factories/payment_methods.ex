@@ -1,14 +1,13 @@
 defmodule Payment.PaymentMethodFactory do
   use ExMachina
-  alias Payment.{Methods.CreditCard, Bank}
+  alias Payment.Methods.CreditCard
+  alias Payment.FinancialEntityFactory
 
-  def visa_santander_credit_card_factory do
+  def visa_santander_factory do
     %CreditCard{
       code: 'visa-santander',
-      desc: 'Visa Santander',
-      bank: build(:santander_rio_bank)
+      bin: '123456789',
+      bank: FinancialEntityFactory.build(:santander_rio)
     }
   end
-
-  def santander_rio_bank_factory, do: %Bank{code: 'santander-rio', name: 'Santander Rio'}
 end

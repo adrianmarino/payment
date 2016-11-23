@@ -1,5 +1,6 @@
 defmodule Passenger, do: defstruct [:full_name, :price]
-defmodule Flight, do: defstruct passengers: []
+
+defmodule Flight, do: defstruct [:id , passengers: []]
 
 defimpl Product, for: Flight do
   import Utils.Enums

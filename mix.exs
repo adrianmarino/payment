@@ -24,7 +24,7 @@ defmodule Payment.Mixfile do
   end
   defp applications(:test), do: applications(:all) ++ [:ex_machina]
   defp applications(_all), do: [
-    :phoenix, :phoenix_pubsub, :cowboy, :logger, :gettext, :phoenix_ecto, :mariaex]
+    :phoenix, :phoenix_pubsub, :cowboy, :logger, :gettext, :phoenix_ecto, :mariaex, :timex]
 
   # Specifies which paths to compile per environment.
   defp elixirc_paths(:test), do: ["lib", "web", "spec/factories"]
@@ -43,7 +43,8 @@ defmodule Payment.Mixfile do
       {:cowboy, "~> 1.0"},
       {:mariaex, "~> 0.7.7"},
       {:espec_phoenix, "~> 0.6.3", only: :test},
-      {:ex_machina, "~> 1.0", only: :test}
+      {:ex_machina, "~> 1.0", only: :test},
+      {:timex, "~> 3.0"}
     ]
   end
 
