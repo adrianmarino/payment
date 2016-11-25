@@ -1,15 +1,13 @@
 defmodule HealthInsurance do
-    defstruct [:id, :code, :start_time, :end_time, :persons_count, :price]
+    defstruct [:id, :code, :start, :end, :quantity, :price]
 
-    def create(id, code, person_price, flight) do
-      persons_count = length(flight.passengers)
-      %HealthInsurance{
-        id: id,
-        code: code,
-        start_time: flight.departure,
-        end_time: flight.return,
-        persons_count: persons_count,
-        price: %NormalPrice{amount: persons_count * person_price}
-      }
+    def create(options \\ []) do
+      code      = Keyword.get(options, :code, "unknow")
+      flight    = Keyword.get(options, :flight, %Flight{})
+      quantity  = length(flight.passengers)
+      price     = %NormalPrice{amount: quantity * Keyword.get(options, :price, 0)}
+
+      %HealthInsurance{code: code, quantity: quantity, start: flight.departure, end: flight.return,
+        price: price}
     end
 end
