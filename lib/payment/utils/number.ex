@@ -1,5 +1,5 @@
 defmodule Utils.Number do
-  def default(nill, default), do: default
+  def default(nil, default), do: default
   def default(value, default) when value < 0, do: default
   def default(value, _), do: value
 
